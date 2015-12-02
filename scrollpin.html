@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="scrollpinapp">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"/>
+	<title>scrollpin</title>
+	<link rel="stylesheet" href="scrollpin.css">
+</head>
+<body>
+	<div ng-controller="mainCtrl">
+		<div class="title" ng-repeat-start="sub in subjects">
+			<!-- 滚动效果元素 -->
+			<div class="pin" ng-bind="sub.name"></div>
+			<!-- 占位元素，避免塌陷，scroll-child属性为当前元素高度-->
+			<div class="name" ng-bind="sub.name" scrollpin="42"></div>
+		</div>
+		<div class="content" ng-repeat-end ng-bind="sub.content"></div>
+	</div>	
+	<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+	<script src="scrollpin.js"> </script>
+</body>
+</html>
